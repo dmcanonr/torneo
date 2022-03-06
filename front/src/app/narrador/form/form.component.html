@@ -1,0 +1,12 @@
+<h3 class="margin">Narrador</h3>
+<form class="margin" [formGroup]="formNarrador" (ngSubmit)="save()">
+    <div class="margin-bottom">
+        <input type="text" placeholder="nombre" formControlName="nombre" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('nombre')">Campo requerido</small>
+    </div>
+    
+    <button type="submit" class="primary">Aceptar</button>
+    <br />
+    <small class="error-form-input" *ngIf="errorSave">Error guardando el narrador</small>
+</form>

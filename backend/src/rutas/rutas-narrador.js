@@ -23,13 +23,13 @@ module.exports = function (app) {
         }
     });
 
-    app.get('/narradores/listar', async function (request, response) {
+    app.get('/narrador/listar', async function (request, response) {
         try {
             let narradores = await narradorModel.narradorModel.find({});
-            console.log('narrador', narradores);
+            console.log('Narrador', narradores);
             response.send(narradores);
         } catch (err) {
-            console.log('hubo un error', err);
+            console.log('Hubo un error', err);
             response.status(500).send({
                 error: 'Error de BD'
             });

@@ -21,6 +21,10 @@ const routes: Routes = [
  {
    path: 'partidos',
    loadChildren: () => import('./partido/partido.module').then(m => m.PartidoModule)
+ },
+ {
+   path: 'narradores',
+   loadChildren: () => import('./narrador/narrador.module').then(m => m.NarradorModule)
  }
 ];
 
