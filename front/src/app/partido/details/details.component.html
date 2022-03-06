@@ -1,0 +1,111 @@
+<h3 class="margin">Detalles del partido</h3>
+<table class="margin total" *ngIf="partido">
+    <thead>
+        <tr>
+            <th>Equipo local</th>
+            <th>Color local</th>
+            <th>Equipo visitante</th>
+            <th>Color visitante</th>
+            <th>marcador</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ partido.equipoLocal.nombre | titlecase }}</td>
+            <td>{{ partido.colorLocal | titlecase }}</td>
+            <td>{{ partido.equipoVisitante.nombre | titlecase }}</td>
+            <td>{{ partido.colorVisitante | titlecase }}</td>
+            <td>{{ marcador }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 class="margin">Arbitraje</h4>
+<table class="margin total" *ngIf="partido">
+    <thead>
+        <tr>
+            <th>Linea 1</th>
+            <th>linea 2</th>
+            <th>Central</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ partido.arbitroLinea1.nombre | titlecase }}</td>
+            <td>{{ partido.arbitroLinea2.nombre | titlecase }}</td>
+            <td>{{ partido.arbitroCentral.nombre | titlecase }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 class="margin" *ngIf="partido?.jugadorDestacado">Jugador destacado</h4>
+<table class="margin total" *ngIf="partido?.jugadorDestacado">
+    <thead>
+        <tr>
+            <th>Jugador</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ partido?.jugadorDestacado.nombre | titlecase }} ({{ partido?.jugadorDestacado.camiseta }})</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 class="margin" *ngIf="partido?.goles.length > 0">Goles</h4>
+<table class="margin total" *ngIf="partido?.goles.length > 0">
+    <thead>
+        <tr>
+            <th>Equipo</th>
+            <th>Jugador</th>
+            <th>Minuto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gol of partido.goles">
+            <td>{{ gol.equipo.nombre | titlecase }}</td>
+            <td>{{ gol.jugador.nombre | titlecase }} ({{ gol.jugador.camiseta }})</td>
+            <td>{{ gol.minuto }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 class="margin" *ngIf="partido?.tarjetas.length > 0">Tarjetas</h4>
+<table class="margin total" *ngIf="partido?.tarjetas.length > 0">
+    <thead>
+        <tr>
+            <th>Equipo</th>
+            <th>Jugador</th>
+            <th>Minuto</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarjeta of partido.tarjetas">
+            <td>{{ tarjeta.equipo.nombre | titlecase }}</td>
+            <td>{{ tarjeta.jugador.nombre | titlecase }} ({{ tarjeta.jugador.camiseta }})</td>
+            <td>{{ tarjeta.minuto }}</td>
+            <td>{{ tarjeta.tipo }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 class="margin" *ngIf="partido?.cambios.length > 0">Cambios ({{ partido?.cambios?.length}})</h4>
+<table class="margin total" *ngIf="partido?.cambios.length > 0">
+    <thead>
+        <tr>
+            <th>Equipo</th>
+            <th>Jugador entra</th>
+            <th>Jugador sale</th>
+            <th>Minuto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cambio of partido.cambios">
+            <td>{{ cambio.equipo.nombre | titlecase }}</td>
+            <td>{{ cambio.jugadorEntra.nombre | titlecase }} ({{ cambio.jugadorEntra.camiseta }})</td>
+            <td>{{ cambio.jugadorSale.nombre | titlecase }} ({{ cambio.jugadorSale.camiseta }})</td>
+            <td>{{ cambio.minuto }}</td>
+        </tr>
+    </tbody>
+</table>

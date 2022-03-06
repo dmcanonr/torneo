@@ -1,0 +1,25 @@
+<h3 class="margin">Agregar gol</h3>
+<form class="margin" [formGroup]="formGol" (ngSubmit)="guardar()" *ngIf="partido">
+    <div class="margin-bottom">
+        <select formControlName="equipo">
+            <option value="null">Equipo</option>
+            <option *ngFor="let equipo of buscarEquipos()" [value]="equipo._id">{{ equipo.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('equipo')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="jugador">
+            <option value="null">Jugador</option>
+            <option *ngFor="let jugador of buscarJugadores()" [value]="jugador._id">{{ jugador.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('jugador')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <input type="number" placeholder="minuto" formControlName="minuto" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('minuto')">Campo requerido</small>
+    </div>
+    <button type="submit" class="primary">Aceptar</button>
+</form>

@@ -1,0 +1,21 @@
+<h3 class="margin">Equipo</h3>
+<form class="margin" [formGroup]="formEquipo" (ngSubmit)="save()">
+    <div class="margin-bottom">
+        <input type="text" placeholder="nombre" formControlName="nombre" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('nombre')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <input type="text" placeholder="color" formControlName="color" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('color')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <input type="text" placeholder="tecnico" formControlName="tecnico" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('tecnico')">Campo requerido</small>
+    </div>
+    <button type="submit" class="primary">Aceptar</button>
+    <br />
+    <small class="error-form-input" *ngIf="errorSave">Error guardando el usuario</small>
+</form>

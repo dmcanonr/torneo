@@ -1,0 +1,27 @@
+<div class="margin flex-container flex-center flex-row">
+    <button class="primary margin-end" [routerLink]="'gestionar'">Agregar</button>
+    <div class="flex-spacer"></div>
+    <button class="secondary margin-end" [routerLink]="'/dashboard'">Volver al dashboard</button>
+</div>
+<table class="margin total">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Color</th>
+            <th>Técnico</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let equipo of equipos">
+            <td>{{ equipo.nombre | titlecase }}</td>
+            <td>{{ equipo.color | titlecase }}</td>
+            <td>{{ equipo.tecnico | titlecase }}</td>
+            <td>
+                <button class="small primary margin-end" [routerLink]="['gestionar/', equipo._id]">Editar</button>
+                <button class="small secondary margin-end" [routerLink]="'detalles/' + equipo._id">Ver</button>
+                <button class="small danger" (click)="borrarEquipo(equipo._id)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

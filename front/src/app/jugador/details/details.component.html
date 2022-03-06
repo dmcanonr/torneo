@@ -1,0 +1,39 @@
+<h3 class="margin">Detalles de jugador</h3>
+<table class="margin total" *ngIf="jugador">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Posición</th>
+            <th>Camiseta</th>
+            <th>Equipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ jugador.nombre | titlecase }}</td>
+            <td>{{ jugador.posicion | titlecase }}</td>
+            <td>{{ jugador.camiseta }}</td>
+            <td>{{ jugador.equipo.nombre | titlecase }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <div *ngIf="equipo && equipo.jugadores.length > 0">
+    <h3 class="margin">Nomina</h3>
+    <table class="margin">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Posición</th>
+                <th>Camiseta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let jugador of equipo.jugadores">
+                <td>{{ jugador.nombre | titlecase }}</td>
+                <td>{{ jugador.posicion | titlecase }}</td>
+                <td>{{ jugador.camiseta }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

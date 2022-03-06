@@ -1,0 +1,35 @@
+<div class="margin flex-container flex-center flex-row">
+    <button class="primary margin-end" [routerLink]="'gestionar'">Agregar</button>
+    <div class="flex-spacer"></div>
+    <button class="secondary margin-end" [routerLink]="'/dashboard'">Volver al dashboard</button>
+</div>
+<table class="margin total" *ngIf="partidos.length > 0">
+    <thead>
+        <tr>
+            <th>Equipo local</th>
+            <th>Equipo visitante</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let partido of partidos">
+            <td>{{ partido.equipoLocal.nombre | titlecase }}</td>
+            <td>{{ partido.equipoVisitante.nombre | titlecase }}</td>
+            <td>
+                <button class="small primary margin-end" [routerLink]="['gestionar/', partido._id]">Editar</button>
+                <button class="small secondary margin-end" [routerLink]="'detalles/' + partido._id">Ver</button>
+                <button class="small secondary margin-end" [routerLink]="'agregar-gol/' + partido._id">
+                    <img src="assets/gol.png" height="20" />
+                </button>
+                <button class="small secondary margin-end" [routerLink]="'agregar-tarjeta/' + partido._id">
+                    <img src="assets/tarjeta.png" height="20" />
+                </button>
+                <button class="small secondary margin-end" [routerLink]="'agregar-cambio/' + partido._id">
+                    <img src="assets/cambio.png" height="20" />
+                </button>
+                <button class="secondary margin-end" [routerLink]="'agregar-jugador-destacado/' + partido._id">Jugador destacado</button>
+                <!-- <button class="secondary margin-end" (click)="terminarPartido(partido._id)">Terminar</button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color          : black;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items    : center;
+}
+
+.flex-total {
+    width : 100%;
+    height: 100%;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-spacer {
+    flex: 1 1 auto;
+}
+
+.margin {
+    margin: 16px;
+}
+
+.margin-bottom {
+    margin-bottom: 16px;
+}
+
+.margin-end {
+    margin-right: 16px;
+}
+
+.error-form-input {
+    color: red;
+}
+
+button {
+    height       : 50px;
+    width        : 300px;
+    border       : 1px;
+    border-radius: 10px;
+    font-size    : 18px;
+
+    &.small {
+        width: 100px;
+    }
+
+    &.primary {
+        background-color: #7AB72C;
+        color           : white;
+    }
+
+    &.secondary {
+        background-color: #34b72b;
+        color           : white;
+    }
+
+    &.danger {
+        background-color: #b7ae2b;
+        color           : white;
+    }
+
+}
+
+table {
+    &.total {
+        width: calc(100% - 32px);
+    }
+
+    tr {
+        &:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+
+    td,
+    th {
+        border : 1px solid #ddd;
+        padding: 8px;
+    }
+
+    th {
+        padding-top     : 12px;
+        padding-bottom  : 12px;
+        text-align      : left;
+        background-color: #04AA6D;
+        color           : white;
+    }
+}
+
+input {
+    width     : 300px;
+    height    : 30px;
+    text-align: center;
+    font-size : 18px;
+}
+
+select {
+    width             : 308px;
+    height            : 40px;
+    font-size         : 18px;
+    -webkit-appearance: none;
+    appearance        : none;
+    color             : black;
+    border            : 1px solid dimgray;
+    line-height       : 1;
+    outline           : 0;
+    padding           : 0.65em 2.5em 0.55em 0.75em;
+    border-radius     : 2px;
+    background-color  : white;
+    background-image  : linear-gradient(dimgray, dimgray),
+        linear-gradient(-135deg, transparent 50%, #e7f5d5 50%),
+        linear-gradient(-225deg, transparent 50%, #e7f5d5 50%),
+        linear-gradient(#e7f5d5 42%, #7ab72c 42%);
+    background-repeat  : no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size    : 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+    background-position: right 20px center, right bottom, right bottom, right bottom;
+}
+
+select:hover {
+    background-image: linear-gradient(#7ab72c, #7ab72c),
+        linear-gradient(-135deg, transparent 50%, #7ab72c 50%),
+        linear-gradient(-225deg, transparent 50%, #7ab72c 50%),
+        linear-gradient(#7ab72c 42%, #e7f5d5 42%);
+}
+
+select:active {
+    background-image: linear-gradient(#7ab72c, #7ab72c),
+        linear-gradient(-135deg, transparent 50%, #7ab72c 50%),
+        linear-gradient(-225deg, transparent 50%, #7ab72c 50%),
+        linear-gradient(#7ab72c 42%, #e7f5d5 42%);
+    color           : #e7f5d5;
+    border-color    : #7ab72c;
+    background-color: #7ab72c;
+}

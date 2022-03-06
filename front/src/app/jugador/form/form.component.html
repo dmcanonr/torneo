@@ -1,0 +1,36 @@
+<h3 class="margin">Jugador</h3>
+<form class="margin" [formGroup]="formJugador" (ngSubmit)="guardar()">
+    <div class="margin-bottom">
+        <input type="text" placeholder="nombre" formControlName="nombre" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('nombre')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="posicion">
+            <option value="portero">Portero</option>
+            <option value="defensa">Defensa</option>
+            <option value="mediocampista">Mediocampista</option>
+            <option value="extremo">Extremo</option>
+            <option value="delantero">Delantero</option>
+        </select>
+
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('posicion')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <input type="number" placeholder="camiseta" formControlName="camiseta" />
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('camiseta')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="equipo">
+            <option value="-1">Equipo</option>
+            <option *ngFor="let equipo of equipos" [value]="equipo._id">{{ equipo.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('equipo')">Campo requerido</small>
+    </div>
+    <button type="submit" class="primary">Aceptar</button>
+    <br />
+    <small class="error-form-input" *ngIf="errorSave">Error guardando el jugador</small>
+</form>

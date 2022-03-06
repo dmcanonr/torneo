@@ -1,0 +1,54 @@
+<h3 class="margin">Partido</h3>
+<form class="margin" [formGroup]="formPartido" (ngSubmit)="guardar()">
+    <div class="margin-bottom">
+        <select formControlName="equipoLocal">
+            <option value="null">Equipo local</option>
+            <option *ngFor="let equipo of equipos" [value]="equipo._id">{{ equipo.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('equipoLocal')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="equipoVisitante">
+            <option value="null">Equipo Visitante</option>
+            <option *ngFor="let equipo of equipos" [value]="equipo._id">{{ equipo.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('equipoVisitante')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="arbitroLinea1">
+            <option value="null">Arbitro linea1</option>
+            <option *ngFor="let arbitro of arbitrosLinea" [value]="arbitro._id">{{ arbitro.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('arbitroLinea1')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="arbitroLinea2">
+            <option value="null">Arbitro linea2</option>
+            <option *ngFor="let arbitro of arbitrosLinea" [value]="arbitro._id">{{ arbitro.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('arbitroLinea2')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="arbitroCentral">
+            <option value="null">Arbitro central</option>
+            <option *ngFor="let arbitro of arbitrosCentrales" [value]="arbitro._id">{{ arbitro.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('arbitroCentral')">Campo requerido</small>
+    </div>
+    <div class="margin-bottom">
+        <select formControlName="narrador">
+            <option value="null">Narrador</option>
+            <option *ngFor="let narrador of narradores" [value]="narrador._id">{{ narrador.nombre }}</option>
+        </select>
+        <br />
+        <small class="error-form-input" *ngIf="validarCampo('arbitroCentral')">Campo requerido</small>
+    </div>
+    <button type="submit" class="primary">Aceptar</button>
+    <br />
+    <small class="error-form-input" *ngIf="errorSave">Error guardando el partido</small>
+</form>
