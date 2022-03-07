@@ -35,7 +35,7 @@ export class PartidoService {
   }
 
   public listarNarradores() {
-    return this.httpClient.get('http://localhost:3000/narradores/listar');
+    return this.httpClient.get('http://localhost:3000/narrador/listar');
   }
   
   public agregarGol(id: string | null, body: any) {

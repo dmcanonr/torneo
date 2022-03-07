@@ -23,7 +23,7 @@ export class AgregarGolComponent implements OnInit {
     this.formGol = formBuilder.group({
       equipo: [null, [Validators.required]],
       jugador: [null, [Validators.required]],
-      minuto: ['', [Validators.required]]
+      minuto: ['', [Validators.required, Validators.min(1)]]
     });
   }
 

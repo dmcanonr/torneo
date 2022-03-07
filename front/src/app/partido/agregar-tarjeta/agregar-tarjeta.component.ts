@@ -23,7 +23,7 @@ export class AgregarTarjetaComponent implements OnInit {
     this.formTarjeta = formBuilder.group({
       equipo: [null, [Validators.required]],
       jugador: [null, [Validators.required]],
-      minuto: ['', [Validators.required]],
+      minuto: ['', [Validators.required, Validators.min(1)]],
       tipo: [null, [Validators.required]]
     });
   }

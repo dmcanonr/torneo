@@ -28,7 +28,7 @@ export class FormComponent implements OnInit {
     this.formJugador = formBuilder.group({
       nombre: ['', [Validators.required]],
       posicion: ['', [Validators.required]],
-      camiseta: ['', [Validators.required]],
+      camiseta: ['', [Validators.required, Validators.min(1)]],
       equipo: ['-1', [Validators.required]]
     });
   }
